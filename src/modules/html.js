@@ -32,7 +32,9 @@ export function sectionShell(number, title, body) {
   const badge =
     title === "Mapa Regulatorio"
       ? `<span class="disclaimer">${legalDisclaimer}</span>`
-      : '<span class="status-pill">Mock realista</span>';
+      : title === "Benchmark Competitivo"
+        ? '<span class="status-pill">Fuentes públicas</span>'
+        : '<span class="status-pill">Mock realista</span>';
   return `
     <article id="section-${number}" class="kit-section">
       <div class="section-card">

@@ -134,6 +134,36 @@ export const marketCatalog = {
       ["5. Piloto controlado", "Producto + Ops", "4-6 semanas", "Límites, cohortes, tablero de riesgo, soporte y conciliación diaria."]
     ],
     sources: {
+      cmfEmisores: ["CMF, emisores de prepago", "https://www.cmfchile.cl/portal/principal/623/w4-article-47006.html"],
+      cmfOperadores: ["CMF, operadoras de tarjetas", "https://www.cmfchile.cl/institucional/mercados/consulta.php?mercado=B&entidad=TPOPE&Estado=VI"],
+      cmfRechazo: ["CMF, comunicado de rechazos", "https://www.cmfchile.cl/portal/prensa/625/w4-article-111436.html"],
+      tenpoBanco: ["La Tercera, Tenpo Bank", "https://www.latercera.com/pulso/noticia/cmf-otorga-autorizacion-de-funcionamiento-a-tenpo-bank-chile/"],
+      pomeloEmisor: ["Pomelo, autorización CMF", "https://pomelo.la/blog/pomelo-emisor-autorizado-tarjetas-prepago-chile"],
+      pomeloMach: ["Pomelo, caso MACHBANK", "https://pomelo.la/blog/tarjeta-de-credito-machbank-pomelo-chile"],
+      racionalPomelo: ["FinteChile, Racional y Pomelo", "https://www.fintechile.org/noticias/fintech-racional-y-pomelo-sellan-alianza-para-ofrecer-cuentas-y-tarjetas-prepago"],
+      machTu: ["MACH, TuMACH", "https://www.machbank.cl/conoce-mach/cuenta-mach/tu-mach"],
+      fintocEmisor: ["Fintoc, emisor CPF", "https://www.fintoc.com/cl/blog/fintoc-entra-a-la-infraestructura-chilena"],
+      fintocFees: ["Fintoc, tarifas", "https://docs.fintoc.com/docs/fintoc-fees"],
+      kushkiFees: ["Kushki, tarifas", "https://www.kushkipagos.com/fees-and-commissions"],
+      kushkiAdq: ["Chócale, Kushki adquirente", "https://chocale.cl/2023/06/kushki-obtiene-licencia-adquirente-cmf-chile/"],
+      pasarelas: ["Digitalízame, comisiones de pasarelas", "https://digitalizame.cl/comisiones-pasarelas-de-pago-chile/"],
+      cotizaPos: ["CotizaPOS, comisiones con IVA", "https://www.cotizapos.cl/guias/comisiones-pos-chile/"],
+      banchilePagos: ["BioBioChile, Banchile Pagos", "https://www.biobiochile.cl/noticias/economia/negocios-y-empresas/2025/11/17/banco-de-chile-obtiene-autorizacion-para-operar-propia-maquina-de-pagos-y-entra-a-competir-al-sector.shtml"],
+      mpBnpl: ["Chócale, BNPL de Mercado Pago", "https://chocale.cl/2026/06/bnpl-de-mercado-pago-en-chile-supero-los-25-millones-de-creditos/"],
+      mpBnplLanzamiento: ["CCS, lanzamiento BNPL", "https://www.ccs.cl/2025/08/28/mercado-pago-lanza-compra-ahora-paga-despues-para-mas-de-un-millon-de-chilenos/"],
+      bnplChile: ["Emol, BNPL en Chile", "https://www.emol.com/noticias/Economia/2025/07/25/1173100/modelo-bnpl-firmas-financieras.html"],
+      remesasComparativa: ["Remesas.com, comparativa", "https://remesas.com/blog/global-66-que-es-como-funciona-y-alternativas/"],
+      wuDlocal: ["Western Union, alianza con dLocal", "https://www.westernunion.com/blog/es/western-union-chile-lanzamiento-tarjetas-dlocal/"],
+      wiseChile: ["Wise, lanzamiento en Chile", "https://newsroom.wise.com/en-NAM/268425-wise-launches-international-money-transfer-service-in-chile/"],
+      isip2026: ["BCCh, Informe de Sistemas de Pago 2026", "https://www.bcentral.cl/en/content/-/detalle/resumen-informe-de-sistemas-de-pago-2026"],
+      exchangesChile: ["Criptoinforme, exchanges y CMF", "https://criptoinforme.com/tutoriales/mejores-exchanges-chile/"],
+      orionxCierre: ["CNN Chile, Orionx", "https://www.cnnchile.com/negocios/cmf-aclara-orionx-no-esta-fiscalizada-tras-rechazo-de-solicitud/"],
+      chainalysisBuda: ["Chainalysis, caso Buda", "https://www.chainalysis.com/es/customer-stories/buda/"],
+      dockTenpo: ["Latam Fintech, Dock y Tenpo", "https://www.latamfintech.co/articles/paytech-dock-se-expande-a-chile-en-colaboracion-con-el-banco-digital-tenpo"],
+      nuekTenpo: ["Nuek, comunicado Tenpo", "https://g5noticias.cl/2026/02/10/tenpo-obtiene-la-autorizacion-de-funcionamiento-de-la-cmf-para-operar-como-banco-con-nuek-como-partner-tecnologico-de-pagos/"],
+      dlocalChile: ["dLocal, documentación Chile", "https://docs.dlocal.com/docs/chile"],
+      stripeChile: ["Global66, Stripe en Chile", "https://www.global66.com/blog/stripe-chile/"],
+      thunesLatam: ["Fintech News, Thunes en Latinoamérica", "https://fintechnews.sg/59424/payments/thunes-sets-up-miami-hub-to-deepen-presence-in-latin-america/"],
       ley20950: ["Ley 20.950", "https://www.bcn.cl/leychile/navegar?idLey=20950"],
       ley21521: ["Ley 21.521", "https://www.bcn.cl/leychile/navegar?idLey=21521"],
       ley20009: ["Ley 20.009", "https://www.bcn.cl/leychile/navegar?idNorma=236736"],
@@ -159,14 +189,117 @@ export const marketCatalog = {
       postergacionDatos: ["Anguita Osorio, postergación", "https://www.anguitaosorio.cl/es/ley-datos-diciembre-2026/"],
       bcnRemesas: ["BCN, informe de remesas", "https://obtienearchivo.bcn.cl/obtienearchivo?id=repositorio%2F10221%2F24493%2F2%2FBCN_remesas_dinero_no_bancarias_01_%281%29.pdf"]
     },
-    vendors: ["Pomelo", "Kushki", "Global66", "Transbank", "Getnet", "Fintoc", "Mambu"],
-    competitors: [
-      ["Mach", "Prepago, P2P, tarjeta virtual", "Bajo costo", "Rapido con sponsor", "Marca masiva y UX simple"],
-      ["Tenpo", "Wallet, tarjeta, inversiones", "Freemium", "Medio", "Ecosistema financiero"],
-      ["Mercado Pago", "Wallet, QR, link, POS", "MDR competitivo", "Rapido", "Red merchant"],
-      ["Global66", "Remesas, cuenta global", "FX spread", "Medio", "Cross-border"],
-      ["Fintoc", "Open finance, pagos cuenta", "API usage", "Rapido", "Cuenta a cuenta"]
-    ]
+    benchmark: {
+      prepaid: [
+        ["MACH", "Banco Bci", "Emitida por un banco; no figura entre los emisores no bancarios", "Más de 4 millones de usuarios. TuMACH abre cuentas a jóvenes de 14 a 17 años con autorización de su tutor.", ["pomeloMach", "machTu"]],
+        ["Tenpo", "Credicorp", "Emisor no bancario (Tenpo Payments S.A.) con autorización para funcionar como banco desde el 19 de enero de 2026", "Más de 2,5 millones de clientes. Tiene un año desde la autorización para iniciar operaciones como banco.", ["cmfEmisores", "tenpoBanco"]],
+        ["Mercado Pago", "Mercado Libre", "Emisor no bancario (Mercado Pago Emisora S.A.)", "Cuenta y tarjeta integradas al ecosistema de comercios y a su oferta de crédito.", ["cmfEmisores"]],
+        ["Tapp", "Caja Los Andes", "Emisor no bancario (Los Andes Tarjetas de Prepago S.A.)", "Distribución sobre la base de afiliados de la caja de compensación.", ["cmfEmisores"]],
+        ["Racional", "Racional, sobre Pomelo", "Opera bajo la licencia de emisor de Pomelo", "Alianza anunciada en septiembre de 2026 para ofrecer cuentas y tarjetas prepago sin licencia propia.", ["racionalPomelo"]]
+      ],
+      wallet: [
+        ["Mercado Pago", "Mercado Libre", "Emisor no bancario y operadora inscrita en la CMF", "Saldo, QR, link de pago y POS en una misma cuenta.", ["cmfEmisores", "cmfOperadores"]],
+        ["Tenpo", "Credicorp", "Emisor no bancario en transición a banco", "Más de 2,5 millones de clientes; sumará cuenta corriente, créditos y depósitos a plazo.", ["tenpoBanco"]],
+        ["MACH", "Banco Bci", "Emitida por un banco", "Ofrece cuenta prepago y cuenta corriente desde la misma app.", ["pomeloMach"]],
+        ["Fintoc Pagos", "Fintoc", "Emisor no bancario inscrito el 7 de mayo de 2026", "Cuentas de provisión de fondos para empresas, con pagos y conciliación por API.", ["fintocEmisor"]]
+      ],
+      paylink: [
+        ["Webpay", "Transbank", "Operadora inscrita en la CMF", "Tarifas por tabla según rubro; los comparadores publican rangos que no coinciden entre sí.", ["cmfOperadores", "pasarelas"]],
+        ["Flow", "Flow", "No figura en el listado de operadoras de la CMF", "2,89% + IVA con abono a 3 días hábiles o 3,19% + IVA con abono al día hábil siguiente, según un comparador.", ["pasarelas"]],
+        ["Mercado Pago", "Mercado Libre", "Operadora inscrita en la CMF", "Entre 2,89% y 3,19% + IVA según el plazo de abono, según un comparador.", ["cmfOperadores", "pasarelas"]],
+        ["Kushki", "Kushki", "Operadora inscrita; adquirente no bancario desde 2023", "Tarifa fija de procesamiento más una tarifa por método de pago, con mínimos de facturación mensual.", ["cmfOperadores", "kushkiFees", "kushkiAdq"]],
+        ["Fintoc", "Fintoc", "Pagos por transferencia; su filial es emisor no bancario desde 2026", "1,00% + IVA por API y 1,35% + IVA en plugins de e-commerce, según un comparador.", ["fintocFees", "fintocEmisor"]]
+      ],
+      pos: [
+        ["Transbank", "Bancos accionistas", "Operadora inscrita en la CMF", "2,08% débito y 2,80% crédito, con arriendo mensual del equipo.", ["cmfOperadores", "cotizaPos"]],
+        ["Getnet", "Santander", "Operadora inscrita en la CMF", "1,77% débito y 2,61% crédito, con arriendo mensual.", ["cmfOperadores", "cotizaPos"]],
+        ["Klap", "Multicaja (Iswitch S.A.)", "Operadora inscrita en la CMF", "0,74% débito y 1,65% crédito, con arriendo mensual.", ["cmfOperadores", "cotizaPos"]],
+        ["Compraquí", "BancoEstado (Red Global S.A.)", "Operadora inscrita en la CMF", "1,54% débito y 1,89% crédito, con compra única del equipo.", ["cmfOperadores", "cotizaPos"]],
+        ["Mercado Pago Point", "Mercado Libre", "Operadora inscrita en la CMF", "2,61% débito y 3,20% crédito, con compra única del equipo.", ["cmfOperadores", "cotizaPos"]],
+        ["TUU", "Haulmer", "No figura en el listado de operadoras de la CMF", "1,77% en débito y crédito, con compra única del equipo.", ["cotizaPos"]],
+        ["Banchile Pagos", "Banco de Chile", "Operadora autorizada en noviembre de 2025", "Entrada de un banco grande con red de adquirencia propia.", ["cmfOperadores", "banchilePagos"]]
+      ],
+      account: [
+        ["MACH", "Banco Bci", "Banco", "Cuenta corriente y cuenta prepago digitales; abre a jóvenes desde los 14 años con TuMACH.", ["pomeloMach", "machTu"]],
+        ["Tenpo", "Credicorp", "Autorización de funcionamiento como banco desde enero de 2026", "Ofrecerá a sus clientes migrar al banco desde la app, sin costo.", ["tenpoBanco"]],
+        ["Mercado Pago", "Mercado Libre", "Emisor no bancario", "Cuenta de provisión de fondos ligada a su tarjeta y a sus productos de crédito.", ["cmfEmisores"]],
+        ["Fintoc Pagos", "Fintoc", "Emisor no bancario desde mayo de 2026", "Cuentas para empresas que reciben pagos y concilian de forma automática.", ["fintocEmisor"]],
+        ["Racional", "Racional, sobre Pomelo", "Opera bajo la licencia de Pomelo", "Suma cuentas y prepago a una app de inversión sin constituir un emisor propio.", ["racionalPomelo"]]
+      ],
+      bnpl: [
+        ["Cuotas sin Tarjeta", "Mercado Pago", "Crédito otorgado por Mercado Pago", "Lanzado en julio de 2025. Montos de $20.000 a $230.000 en 3 o 6 cuotas fijas. Más de 2,5 millones de créditos en su primer año.", ["mpBnplLanzamiento", "mpBnpl"]],
+        ["CLEO", "CLEO", "No verificado en esta revisión", "Cuotas sin tarjeta en comercios asociados; exige una cuenta bancaria activa para validar identidad.", ["bnplChile"]],
+        ["Tarjetas de crédito en cuotas", "Bancos y retail financiero", "Emisores de tarjetas de crédito", "Es el sustituto dominante: el BNPL compite donde el cliente no tiene tarjeta de crédito.", ["bnplChile"]]
+      ],
+      remittance: [
+        ["Global66", "Global66", "Fintech chilena", "Envíos 100% digitales a más de 70 destinos, sin opción de efectivo.", ["remesasComparativa"]],
+        ["Western Union", "Western Union", "Remesadora internacional", "Red física con retiro en efectivo en más de 200 países; en Chile acepta pago con tarjeta mediante dLocal.", ["remesasComparativa", "wuDlocal"]],
+        ["Wise", "Wise", "Lanzó envíos desde Chile el 21 de julio de 2026", "Envíos en pesos chilenos a más de 40 monedas en 160 países.", ["wiseChile"]],
+        ["Remitly", "Remitly", "Remesadora digital", "Dos modalidades, rápida y económica, con margen sobre el tipo de cambio.", ["remesasComparativa"]]
+      ],
+      crypto: [
+        ["Buda.com", "Buda.com", "Solicitud en trámite ante la CMF, según una comparativa del 6 de octubre de 2026", "Opera en Chile, Colombia, Perú y Argentina.", ["exchangesChile", "chainalysisBuda"]],
+        ["CryptoMKT", "CryptoMKT", "Solicitud en trámite ante la CMF, según la misma comparativa", "Exchange local con operación en pesos.", ["exchangesChile"]],
+        ["Orionx", "Orionx SpA", "Solicitud rechazada por la CMF el 26 de junio de 2026", "Anunció su cierre en septiembre de 2026 tras detectar una salida de activos superior a US$7 millones; retiros suspendidos.", ["cmfRechazo", "orionxCierre"]],
+        ["Binance", "Binance", "No inscrita en la CMF, según comparativas", "Acepta pesos chilenos por transferencia bancaria.", ["exchangesChile"]]
+      ]
+    },
+    marketSignals: [
+      ["La licencia se puede arrendar: Pomelo fue autorizada como emisor no bancario en junio de 2026 y asume la responsabilidad regulatoria de las tarjetas que emiten terceros sobre su licencia.", ["pomeloEmisor", "racionalPomelo"]],
+      ["Las fintech suben de licencia: Tenpo partió como emisor de prepago en 2020 y obtuvo la autorización para funcionar como banco en enero de 2026.", ["tenpoBanco"]],
+      ["La adquirencia dejó de ser una sola red: hay diez operadoras de tarjetas vigentes en la CMF, y Banco de Chile sumó la suya en noviembre de 2025.", ["cmfOperadores", "banchilePagos"]],
+      ["El riesgo regulatorio es concreto: la CMF rechazó siete solicitudes de intermediación el 26 de junio de 2026 y esas entidades no pueden tomar clientes nuevos.", ["cmfRechazo"]],
+      ["Las remesas salientes sumaron US$2.271 millones en 2025, con Colombia y Perú como principales destinos, siete empresas con el 84% del mercado y un costo promedio de 1,8% a 2,7%.", ["isip2026"]]
+    ],
+    vendorMap: {
+      prepaid: [
+        ["Pomelo", "Emisión, procesamiento y licencia de emisor", "Emisor no bancario autorizado por la CMF en junio de 2026; procesa la tarjeta de crédito de MACHBANK.", ["pomeloEmisor", "pomeloMach"]],
+        ["Dock", "Emisión y procesamiento", "Provee la tecnología de las tarjetas de crédito de Tenpo.", ["dockTenpo"]],
+        ["Nuek", "Procesamiento de prepago", "Parte de Minsait (Indra); procesa las tarjetas de prepago de Tenpo.", ["nuekTenpo"]],
+        ["Marqeta, Galileo, Thales", "Procesamiento y fabricación de tarjetas", "Sin clientes chilenos confirmados en las fuentes revisadas.", []]
+      ],
+      wallet: [
+        ["Pomelo", "Cuentas, emisión y licencia de emisor", "Emisor no bancario autorizado en junio de 2026.", ["pomeloEmisor"]],
+        ["Fintoc Pagos", "Cuentas de provisión de fondos por API", "Emisor no bancario inscrito el 7 de mayo de 2026.", ["fintocEmisor"]],
+        ["Dock", "Banca digital y emisión", "Entró a Chile con Tenpo como cliente.", ["dockTenpo"]],
+        ["Mambu", "Core bancario", "Sin clientes chilenos confirmados en las fuentes revisadas.", []]
+      ],
+      paylink: [
+        ["Kushki", "Adquirencia y gateway", "Operadora inscrita en la CMF; inició como adquirente con foco en e-commerce.", ["cmfOperadores", "kushkiAdq"]],
+        ["Transbank", "Adquirencia (Webpay)", "Operadora inscrita en la CMF.", ["cmfOperadores"]],
+        ["Fintoc", "Pagos por transferencia", "Publica sus tarifas y cobra IVA sobre la comisión.", ["fintocFees"]],
+        ["dLocal", "Procesamiento local para comercios internacionales", "Filial chilena desde 2018; actúa como comercio local de registro.", ["dlocalChile"]],
+        ["Stripe", "Gateway global", "No abre cuentas a empresas chilenas, según guías de terceros; conviene confirmarlo con Stripe.", ["stripeChile"]]
+      ],
+      pos: [
+        ["Transbank", "Adquirencia y terminales", "Operadora inscrita en la CMF.", ["cmfOperadores"]],
+        ["Getnet", "Adquirencia y terminales", "Operadora inscrita en la CMF, del grupo Santander.", ["cmfOperadores"]],
+        ["Klap", "Adquirencia y terminales", "Iswitch S.A., inscrita en la CMF.", ["cmfOperadores"]],
+        ["Kushki", "Adquirencia", "Operadora inscrita; en 2023 anunció planes para pagos presenciales.", ["cmfOperadores", "kushkiAdq"]],
+        ["Fiserv", "Plataforma de adquirencia", "Tiene presencia en Chile; sin operación de adquirencia confirmada en las fuentes revisadas.", []]
+      ],
+      account: [
+        ["Pomelo", "Cuentas, emisión y licencia de emisor", "Racional lanzó cuentas y prepago sobre su licencia en septiembre de 2026.", ["pomeloEmisor", "racionalPomelo"]],
+        ["Fintoc Pagos", "Cuentas de provisión de fondos por API", "Emisor no bancario inscrito el 7 de mayo de 2026.", ["fintocEmisor"]],
+        ["Dock", "Banca digital y emisión", "Entró a Chile con Tenpo como cliente.", ["dockTenpo"]],
+        ["Mambu, Galileo", "Core bancario y procesamiento", "Sin clientes chilenos confirmados en las fuentes revisadas.", []]
+      ],
+      bnpl: [
+        ["Pomelo", "Motor de crédito y procesamiento", "Gestiona el ciclo de vida del crédito de la tarjeta de MACHBANK.", ["pomeloMach"]],
+        ["Mercado Pago", "BNPL para comercios de su red", "Ofrece Cuotas sin Tarjeta a los compradores de sus comercios.", ["mpBnpl"]],
+        ["Proveedores de scoring y cobranza", "Evaluación de riesgo y recuperación", "No investigados en esta revisión.", []]
+      ],
+      remittance: [
+        ["dLocal", "Cobro con tarjeta y pagos locales", "Integra los pagos con tarjeta de Western Union en Chile.", ["wuDlocal", "dlocalChile"]],
+        ["Thunes", "Red de pagos transfronterizos", "Declara alianzas de pago en Chile, sin detalle público de rieles ni límites.", ["thunesLatam"]],
+        ["Wise Platform, Nium", "Infraestructura de envíos por API", "Sin disponibilidad en Chile confirmada en las fuentes revisadas.", []]
+      ],
+      crypto: [
+        ["Chainalysis", "Monitoreo de transacciones", "Buda.com es cliente publicado.", ["chainalysisBuda"]],
+        ["Fireblocks", "Custodia", "Sin clientes chilenos confirmados en las fuentes revisadas.", []],
+        ["Circle, MoonPay, Coinbase Prime", "Stablecoins, rampas y liquidez", "No investigados en esta revisión.", []]
+      ]
+    }
   },
   Mexico: { status: "soon", label: "Mexico - Pronto" },
   Brasil: { status: "soon", label: "Brasil - Pronto" }
@@ -189,7 +322,7 @@ export const productCatalog = {
       breakEven: "Suele requerir alta activacion: 40k-120k usuarios activos, TPV recurrente y fraude bajo 25 bps.",
       levers: ["Priorizar tarjeta virtual en MVP", "Limites por nivel KYC", "Incentivar uso recurrente", "Controlar costos de soporte con autoservicio"]
     },
-    vendors: ["Pomelo", "Marqeta", "Dock", "Galileo", "Thales"],
+    vendors: ["Pomelo", "Dock", "Nuek"],
     references: ["Mach", "Uala", "Cash App Card"]
   },
   wallet: {
@@ -208,7 +341,7 @@ export const productCatalog = {
       breakEven: "Depende de frecuencia. Un wallet con menos de 4 transacciones/usuario/mes tiende a no cubrir KYC y soporte.",
       levers: ["Activacion con caso de uso ancla", "Cash-in barato", "Limites graduales", "Cross-sell solo despues de recurrencia"]
     },
-    vendors: ["Mambu", "Pomelo", "Dock", "Galileo", "Synapse"],
+    vendors: ["Pomelo", "Fintoc Pagos", "Dock"],
     references: ["Mercado Pago", "Tenpo", "Venmo"]
   },
   paylink: {
@@ -227,7 +360,7 @@ export const productCatalog = {
       breakEven: "Mas sensible a TPV que a cantidad de comercios. Mejor 1.000 comercios con uso semanal que 10.000 dormidos.",
       levers: ["Segmentar rubros de bajo riesgo", "Onboarding merchant progresivo", "Settlement por riesgo", "Bundles SaaS para comercios recurrentes"]
     },
-    vendors: ["Stripe", "Mercado Pago", "Adyen", "Kushki", "dLocal"],
+    vendors: ["Kushki", "Transbank", "Fintoc", "dLocal"],
     references: ["Mercado Pago Link", "Stripe Payment Links", "Kushki"]
   },
   pos: {
@@ -246,7 +379,7 @@ export const productCatalog = {
       breakEven: "Terminales con TPV bajo destruyen margen por soporte y hardware. Requiere scoring merchant antes de enviar equipo.",
       levers: ["Tap to Phone para long tail", "Deposito/garantia para hardware", "Segmentar por rubro/TPV", "Ofrecer liquidacion rapida como add-on"]
     },
-    vendors: ["Fiserv", "Getnet", "Kushki", "Adyen", "Stripe Terminal"],
+    vendors: ["Transbank", "Getnet", "Klap", "Kushki"],
     references: ["SumUp", "Clip", "Square"]
   },
   account: {
@@ -265,7 +398,7 @@ export const productCatalog = {
       breakEven: "La cuenta sola es dificil; mejora si se ancla a payroll, merchant settlement o tarjeta.",
       levers: ["Caso de uso recurrente", "Automatizar conciliacion", "B2B2C para bajar CAC", "Limites y pricing por segmento"]
     },
-    vendors: ["Mambu", "Galileo", "Synapse", "Dock", "Pomelo"],
+    vendors: ["Pomelo", "Fintoc Pagos", "Dock"],
     references: ["Chime", "Nubank", "Uala"]
   },
   bnpl: {
@@ -284,7 +417,7 @@ export const productCatalog = {
       breakEven: "No depende solo de conversion: una mejora de 1 pp en perdida esperada puede valer mas que 20 bps de MDR.",
       levers: ["Piloto por rubro", "Limites dinamicos", "Down payment", "Merchant risk sharing", "Cosechas semanales de mora"]
     },
-    vendors: ["Addi", "Kueski", "Affirm", "Nelo", "Aplazo"],
+    vendors: ["Pomelo", "Mercado Pago"],
     references: ["Affirm", "Kueski Pay", "Addi"]
   },
   remittance: {
@@ -303,7 +436,7 @@ export const productCatalog = {
       breakEven: "Se logra por corredor rentable, no por promedio global. Cada par origen-destino debe tener P&L propio.",
       levers: ["Partir con pocos corredores", "Prefondeo controlado", "Pricing transparente", "KYC reforzado por monto/frecuencia"]
     },
-    vendors: ["dLocal", "Thunes", "Wise Platform", "Nium", "Convera"],
+    vendors: ["dLocal", "Thunes"],
     references: ["Wise", "Remitly", "Global66"]
   },
   crypto: {
@@ -322,7 +455,7 @@ export const productCatalog = {
       breakEven: "La rentabilidad depende de volumen y mix de rails; tarjetas para on-ramp elevan fraude y costos.",
       levers: ["Limites por rail", "Stablecoins primero", "Off-ramp con cuentas verificadas", "Analitica blockchain por riesgo"]
     },
-    vendors: ["Circle", "Fireblocks", "Chainalysis", "MoonPay", "Coinbase Prime"],
+    vendors: ["Chainalysis", "Fireblocks"],
     references: ["MoonPay", "Bitso", "Coinbase"]
   }
 };

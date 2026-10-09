@@ -76,7 +76,7 @@ export function downloadableAsset(ctx, type) {
     rfp: {
       name: `${baseName}-rfp.md`,
       type: "text/markdown",
-      content: `# RFP Vendors - ${ctx.product.label}\n\n## Vendors sugeridos\n${ctx.product.vendors.concat(ctx.market.vendors).slice(0, 8).map((x) => `- ${x}`).join("\n")}\n\n## Preguntas clave\n- Cobertura en ${ctx.country}\n- SLAs y uptime\n- Pricing por evento/transaccion\n- Certificaciones PCI/EMV/3DS\n- Modelo de soporte y escalamiento\n- Exportacion de datos y ownership del ledger\n`
+      content: `# RFP Vendors - ${ctx.product.label}\n\n## Vendors sugeridos\n${ctx.market.vendorMap[ctx.productKey].filter((row) => row[3].length).map(([name, role, evidence]) => `- ${name} (${role}): ${evidence}`).join("\n")}\n\n## Preguntas clave\n- Cobertura en ${ctx.country}\n- SLAs y uptime\n- Pricing por evento/transaccion\n- Certificaciones PCI/EMV/3DS\n- Modelo de soporte y escalamiento\n- Exportacion de datos y ownership del ledger\n`
     },
     checklist: {
       name: `${baseName}-checklist-regulatorio.md`,

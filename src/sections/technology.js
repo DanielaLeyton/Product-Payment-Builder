@@ -1,4 +1,4 @@
-import { list, table } from "../modules/html.js";
+import { cite, list, table } from "../modules/html.js";
 
 export const technologySection = {
   id: "technology",
@@ -19,7 +19,7 @@ export const technologySection = {
         ["Riesgo regulatorio", "Mayor carga interna", "Compartido con sponsor/vendor"],
         ["Escalabilidad", "Custom", "Depende del contrato y SLAs"]
       ])}</div></details>
-      <details><summary>Vendors recomendados por componente</summary><div>${list(product.vendors.concat(market.vendors).slice(0, 9))}</div></details>
+      <details open><summary>Vendors con presencia verificada en Chile</summary><div>${table(["Vendor", "Rol", "Evidencia en Chile", "Fuente"], (market.vendorMap[ctx.productKey] || []).map((row) => [...row.slice(0, -1), cite(market.sources, row[row.length - 1])]))}</div></details>
     `;
   }
 };
