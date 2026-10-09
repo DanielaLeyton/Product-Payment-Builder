@@ -76,7 +76,7 @@ export const productCatalog = {
   },
   wallet: {
     label: "Wallet",
-    keywords: ["wallet", "billetera", "cuenta de pago"],
+    keywords: ["wallet", "billetera"],
     definition: "Cuenta transaccional digital para guardar saldo, pagar, transferir y conectar instrumentos de pago.",
     useCases: ["Pago P2P", "Cash-in y cash-out", "QR o link de pago", "Pago de servicios"],
     personas: ["Usuario retail", "Comercio pequeno", "Operaciones de conciliacion", "Compliance"],

@@ -27,6 +27,7 @@ const state = {
 };
 
 let skeletonTimer = null;
+const floatingChat = window.matchMedia("(max-width: 1180px)");
 
 const els = {
   appShell: document.querySelector(".app-shell"),
@@ -217,6 +218,7 @@ function showDecisionView() {
   els.dashboard.classList.add("hidden");
   els.decisionPanel.classList.remove("hidden");
   setKitChromeVisible(false);
+  els.sidebarReset.classList.remove("hidden");
   setChatVisible(false);
 }
 
@@ -241,7 +243,7 @@ function renderKit(showSkeleton) {
   els.dashboard.classList.remove("hidden");
   els.topHeader.classList.remove("hidden");
   setKitChromeVisible(true);
-  setChatVisible(true);
+  if (showSkeleton) setChatVisible(!floatingChat.matches);
   els.kitTitle.textContent = `Kit para: ${displayIntent()} en ${state.country}`;
   els.countrySelect.value = state.country;
 

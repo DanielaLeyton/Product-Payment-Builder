@@ -1083,8 +1083,8 @@ details > div {
     bottom: 16px;
     top: auto;
     width: min(380px, calc(100vw - 32px));
-    height: 520px;
-    z-index: 20;
+    height: min(520px, calc(100vh - 32px));
+    z-index: 40;
     box-shadow: var(--shadow);
   }
 }
