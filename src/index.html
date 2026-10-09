@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PayKit Builder</title>
+    <link rel="stylesheet" href="./styles.css?v=10" />
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  </head>
+  <body>
+    <div class="app-shell home-mode">
+      <aside class="sidebar" aria-label="Secciones del kit">
+        <div class="brand">
+          <span class="brand-mark">PK</span>
+          <div>
+            <strong>PayKit Builder</strong>
+            <small>Wiki de pagos</small>
+          </div>
+        </div>
+        <button class="sidebar-action hidden" type="button" data-reset-builder>Nuevo producto</button>
+        <nav id="sectionNav" class="section-nav hidden" aria-label="Navegacion del kit"></nav>
+      </aside>
+
+      <main class="main">
+        <header id="topHeader" class="top-header hidden">
+          <div>
+            <span class="eyebrow">Kit activo</span>
+            <h2 id="kitTitle">Kit para: -</h2>
+          </div>
+          <div class="header-actions">
+            <label class="select-label">
+              Pais
+              <select id="countrySelect" aria-label="Seleccionar pais">
+                <option value="Chile">Chile</option>
+                <option value="Mexico" disabled>Mexico - Pronto</option>
+                <option value="Brasil" disabled>Brasil - Pronto</option>
+              </select>
+            </label>
+            <div class="depth-toggle" role="group" aria-label="Nivel de profundidad">
+              <button id="execMode" class="active" type="button">C-Level</button>
+              <button id="techMode" type="button">Tecnico</button>
+            </div>
+          </div>
+        </header>
+
+        <section id="hero" class="hero">
+          <header class="home-header" aria-label="PayKit Builder">
+            <div class="home-brand">
+              <span class="brand-mark">PK</span>
+              <div>
+                <strong>PayKit Builder</strong>
+                <small>Payments product intelligence</small>
+              </div>
+            </div>
+            <div class="home-header-meta">
+              <span>Chile activo</span>
+              <span>Mexico y Brasil pronto</span>
+            </div>
+          </header>
+          <div class="hero-content">
+            <span class="eyebrow">Chile-first payment product intelligence</span>
+            <h1>Define payment products with regulatory confidence</h1>
+            <p>Convierte una idea de medios de pago en un kit ejecutable para Producto, Legal, Riesgo, Tech y Growth. Diseñado para PMs que necesitan decidir con contexto chileno, no con plantillas genéricas.</p>
+            <div id="intentForm" class="intent-form">
+              <input
+                id="intentInput"
+                type="text"
+                placeholder="Ej: Quiero lanzar una tarjeta prepago para adolescentes en Chile"
+                autocomplete="off"
+              />
+              <button id="generateKit" type="button" data-generate-kit>Generar mi Kit de Construcción</button>
+            </div>
+            <div class="examples" aria-label="Ejemplos">
+              <button data-example="Wallet para freelancers en Chile">Wallet</button>
+              <button data-example="Link de pago para comercios en Chile">Link de pago</button>
+              <button data-example="POS para pymes en Chile">POS</button>
+              <button data-example="Cuenta digital para Chile">Cuenta digital</button>
+              <button data-example="BNPL para ecommerce en Chile">BNPL</button>
+              <button data-example="Remesas para migrantes en Chile">Remesas</button>
+            </div>
+            <div class="market-status" aria-label="Mercados disponibles">
+              <span>Chile activo</span>
+              <span>Mexico - Pronto</span>
+              <span>Brasil - Pronto</span>
+            </div>
+          </div>
+          <section class="launch-flow" aria-label="From idea to launch">
+            <div class="section-intro">
+              <span class="eyebrow">From idea to launch</span>
+              <h2>Un flujo de producto para pasar de intención a plan ejecutable.</h2>
+            </div>
+            <div class="landing-info">
+              <article>
+                <span>01</span>
+                <h2>Idear con restricciones reales</h2>
+                <p>Transforma “quiero lanzar una wallet” en alcance, usuarios, casos de uso, flujo de dinero y supuestos de negocio para Chile.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <h2>Evaluar decisiones críticas</h2>
+                <p>Compara licencia propia vs sponsor, build vs buy, riesgos, vendors, KYC/AML y unit economics antes de comprometer roadmap.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <h2>Entregar artefactos accionables</h2>
+                <p>Genera PRD, RFP, checklist regulatorio, modelo financiero y roadmap para alinear Producto, Legal, Risk, Tech y Operaciones.</p>
+              </article>
+            </div>
+          </section>
+          <section class="kit-preview-section" aria-label="Preview visual del kit">
+            <div class="section-intro">
+              <span class="eyebrow">Kit preview</span>
+              <h2>Un workspace de decisiones, no un documento estático.</h2>
+              <p>El output se organiza como dashboard navegable con secciones independientes, datos regulatorios, economics y artefactos descargables.</p>
+            </div>
+            <div class="kit-preview">
+              <div class="preview-sidebar">
+                <strong>Tarjeta prepago Chile</strong>
+                <span class="active">Ficha del Producto</span>
+                <span>Mapa Regulatorio</span>
+                <span>Stack Tecnologico</span>
+                <span>Unit Economics</span>
+                <span>Roadmap</span>
+              </div>
+              <div class="preview-main">
+                <div class="preview-toolbar">
+                  <span>Kit activo</span>
+                  <strong>Prepago adolescentes</strong>
+                </div>
+                <div class="preview-grid">
+                  <div class="preview-card large">
+                    <small>Regulatory route</small>
+                    <h3>Sponsor bancario + emisor prepago</h3>
+                    <p>CMF, Banco Central, UAF y SERNAC mapeados por fase.</p>
+                  </div>
+                  <div class="preview-card">
+                    <small>Break-even</small>
+                    <h3>40k-120k MAU</h3>
+                    <p>Segun TPV, fraude y costo de soporte.</p>
+                  </div>
+                  <div class="preview-card">
+                    <small>Vendor shortlist</small>
+                    <h3>Pomelo · Transbank · Fintoc</h3>
+                    <p>Procesamiento, adquirencia y cash-in.</p>
+                  </div>
+                </div>
+                <div class="preview-status-row">
+                  <span>PRD ready</span>
+                  <span>Legal review</span>
+                  <span>RFP draft</span>
+                  <span>Model v1</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pm-section" aria-label="Built for payment PMs in Chile">
+            <div class="section-intro">
+              <span class="eyebrow">Built for payment PMs in Chile</span>
+              <h2>Hecho para equipos que deben coordinar producto, regulación y operación.</h2>
+            </div>
+            <div class="pm-grid">
+              <article><h3>Producto</h3><p>Define alcance, journeys, MVP, casos de uso y decisiones de priorización.</p></article>
+              <article><h3>Legal & Compliance</h3><p>Revisa rutas regulatorias, KYC/AML, fuentes normativas y dependencias con sponsor.</p></article>
+              <article><h3>Riesgo</h3><p>Modela fraude, chargebacks, liquidez, continuidad y monitoreo operativo.</p></article>
+              <article><h3>Tech & Vendors</h3><p>Evalua arquitectura, ledger, procesador, APIs, certificaciones y build vs buy.</p></article>
+            </div>
+          </section>
+          <section class="product-status" aria-label="Roadmap y estado del producto">
+            <div class="section-intro">
+              <span class="eyebrow">Product status</span>
+              <h2>Roadmap de PayKit Builder</h2>
+            </div>
+            <div class="status-board">
+              <article>
+                <span>Live</span>
+                <h3>Chile payment kits</h3>
+                <p>Wallet, prepago, POS, link de pago, cuenta digital, BNPL, remesas y crypto ramp.</p>
+              </article>
+              <article>
+                <span>In progress</span>
+                <h3>Vendor scoring</h3>
+                <p>Matriz de comparacion por costo, time-to-market, cobertura local y riesgo operacional.</p>
+              </article>
+              <article>
+                <span>Next</span>
+                <h3>Exports to PM tools</h3>
+                <p>Notion, Linear, Jira y briefs listos para equipos de producto y tecnologia.</p>
+              </article>
+              <article>
+                <span>Later</span>
+                <h3>Mexico & Brasil</h3>
+                <p>Expansion de datasets regulatorios y vendors por mercado.</p>
+              </article>
+            </div>
+          </section>
+          <div class="landing-strip" aria-label="Contenido del kit">
+            <span>9 secciones</span>
+            <span>Roadmap MVP a escala</span>
+            <span>Checklist legal</span>
+            <span>RFP vendors</span>
+            <span>Modelo financiero</span>
+          </div>
+        </section>
+
+        <section id="decisionPanel" class="decision-panel hidden" aria-live="polite"></section>
+
+        <section id="kitDashboard" class="dashboard hidden"></section>
+      </main>
+
+      <aside id="chatPanel" class="chat-panel hidden" aria-label="Chat con el kit">
+        <div class="chat-header">
+          <div>
+            <span class="eyebrow">Chat con el Kit</span>
+            <h3>Pregunta sobre regulación, tech, riesgos o roadmap</h3>
+          </div>
+          <button id="toggleChat" class="icon-action" type="button" aria-label="Ocultar chat">Ocultar</button>
+        </div>
+        <div id="chatMessages" class="chat-messages"></div>
+        <form id="chatForm" class="chat-form">
+          <input id="chatInput" type="text" placeholder="Ej: ¿Que licencias necesito?" />
+          <button type="submit">Enviar</button>
+        </form>
+      </aside>
+      <button id="chatLauncher" class="chat-launcher hidden" type="button">Abrir chat</button>
+    </div>
+
+    <script type="module" src="./app.js?v=10"></script>
+  </body>
+</html>
