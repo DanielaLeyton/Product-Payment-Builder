@@ -1,5 +1,5 @@
 import { sectionRegistry } from "../sections/index.js";
-import { sectionShell, slug } from "../modules/html.js";
+import { legalDisclaimer, sectionShell, slug } from "../modules/html.js";
 import { getMarket, getProduct } from "./catalog-service.js";
 
 export function createKitContext({ intent, country = "Chile", productKey, depth }) {
@@ -48,7 +48,7 @@ export function renderKitSkeleton() {
 export function answerKitQuestion(ctx, question) {
   const q = question.toLowerCase();
   if (q.includes("licencia") || q.includes("regula") || q.includes("legal")) {
-    return `Mapa regulatorio: mira ${ctx.market.regulators.slice(0, 3).join(", ")}. Modelos posibles: ${ctx.market.licenses.slice(0, 2).join(" o ")}. La decision clave es licencia propia vs sponsor. Validar con equipo legal. Actualizado a Q1 2026.`;
+    return `Mapa regulatorio: mira ${ctx.market.regulators.slice(0, 3).join(", ")}. Modelos posibles: ${ctx.market.licenses.slice(0, 2).join(" o ")}. La decision clave es licencia propia vs sponsor. ${legalDisclaimer}`;
   }
   if (q.includes("vendor") || q.includes("proveedor")) {
     return `Shortlist sugerida: ${ctx.product.vendors.slice(0, 4).join(", ")}. Pide SLAs, cobertura local, certificaciones, pricing por transaccion, ownership del ledger y tiempos de certificacion.`;
@@ -62,7 +62,7 @@ export function answerKitQuestion(ctx, question) {
   if (q.includes("economics") || q.includes("margen") || q.includes("revenue")) {
     return `Economics base: ingresos por ${ctx.product.revenue.slice(0, 3).join(", ")}. Costos fuertes: ${ctx.product.costs.slice(0, 3).join(", ")}. El breakeven depende de volumen, fraude y costo de soporte.`;
   }
-  return `Para ${ctx.product.label} en ${ctx.country}, empezaria por cerrar alcance, sponsor/licencia, KYC y vendor core. Validar con equipo legal. Actualizado a Q1 2026.`;
+  return `Para ${ctx.product.label} en ${ctx.country}, empezaria por cerrar alcance, sponsor/licencia, KYC y vendor core. ${legalDisclaimer}`;
 }
 
 export function downloadableAsset(ctx, type) {
@@ -71,7 +71,7 @@ export function downloadableAsset(ctx, type) {
     prd: {
       name: `${baseName}-prd.md`,
       type: "text/markdown",
-      content: `# PRD - ${ctx.product.label} en ${ctx.country}\n\n## Objetivo\n${ctx.intent}\n\n## Alcance MVP\n${ctx.product.useCases.map((x) => `- ${x}`).join("\n")}\n\n## KPIs\n- Activacion\n- Volumen transaccional\n- Aprobacion\n- Fraude neto\n- NPS\n\n## Riesgos\n${ctx.product.costs.map((x) => `- ${x}`).join("\n")}\n\nValidar con equipo legal. Actualizado a Q1 2026.\n`
+      content: `# PRD - ${ctx.product.label} en ${ctx.country}\n\n## Objetivo\n${ctx.intent}\n\n## Alcance MVP\n${ctx.product.useCases.map((x) => `- ${x}`).join("\n")}\n\n## KPIs\n- Activacion\n- Volumen transaccional\n- Aprobacion\n- Fraude neto\n- NPS\n\n## Riesgos\n${ctx.product.costs.map((x) => `- ${x}`).join("\n")}\n\n${legalDisclaimer}\n`
     },
     rfp: {
       name: `${baseName}-rfp.md`,
@@ -81,7 +81,7 @@ export function downloadableAsset(ctx, type) {
     checklist: {
       name: `${baseName}-checklist-regulatorio.md`,
       type: "text/markdown",
-      content: `# Checklist regulatorio - ${ctx.country}\n\n## Reguladores\n${ctx.market.regulators.map((x) => `- ${x}`).join("\n")}\n\n## Licencias/modelos\n${ctx.market.licenses.map((x) => `- [ ] ${x}`).join("\n")}\n\n## KYC/AML\n${ctx.market.kyc.map((x) => `- [ ] ${x}`).join("\n")}\n\nValidar con equipo legal. Actualizado a Q1 2026.\n`
+      content: `# Checklist regulatorio - ${ctx.country}\n\n## Reguladores\n${ctx.market.regulators.map((x) => `- ${x}`).join("\n")}\n\n## Licencias/modelos\n${ctx.market.licenses.map((x) => `- [ ] ${x}`).join("\n")}\n\n## KYC/AML\n${ctx.market.kyc.map((x) => `- [ ] ${x}`).join("\n")}\n\n## Obligaciones operativas\n${ctx.market.obligations.map(([topic, text]) => `- [ ] ${topic}: ${text}`).join("\n")}\n\n## Fuentes\n${Object.values(ctx.market.sources).map(([name, url]) => `- ${name}: ${url}`).join("\n")}\n\n${legalDisclaimer}\n`
     },
     finance: {
       name: `${baseName}-modelo-financiero.csv`,

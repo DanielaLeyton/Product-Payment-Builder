@@ -1138,3 +1138,29 @@ details > div {
     padding-top: 48px;
   }
 }
+
+.source-link {
+  display: inline-block;
+  margin: 2px 4px 2px 0;
+  padding: 1px 7px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: #b9beff;
+  font-size: 11px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.source-link:hover {
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+
+.product-rules {
+  margin-bottom: 14px;
+}
+
+.source-note {
+  margin-top: 14px;
+  font-size: 12px;
+}

@@ -2,45 +2,163 @@ export const marketCatalog = {
   Chile: {
     status: "active",
     label: "Chile",
-    regulators: ["CMF", "Banco Central de Chile", "UAF", "SERNAC", "Servicio de Impuestos Internos"],
-    laws: ["Ley Fintech 21.521", "Ley de Fraudes 20.009", "Ley 19.628 de datos personales", "Normas CMF para medios de pago", "Normativa UAF AML/CFT"],
-    licenses: ["Emisor de tarjetas de pago con provision de fondos", "Operador de tarjetas", "PSP o subadquirente", "Modelo con sponsor bancario si aplica"],
-    kyc: ["Cuenta basica: identificacion, documento y listas", "Cuenta ampliada: biometria, origen de fondos y monitoreo", "Empresas: beneficiario final, poderes y actividad"],
+    reviewed: "octubre de 2026",
+    regulators: ["CMF", "Banco Central de Chile", "UAF", "SERNAC", "Comité de Tasas de Intercambio", "ANCI", "Agencia de Protección de Datos Personales"],
+    laws: [
+      "Ley 20.950: medios de pago con provisión de fondos por entidades no bancarias",
+      "Compendio de Normas Financieras del Banco Central, capítulos III.J.1, III.J.1.3 y III.J.2",
+      "Ley 21.521 (Ley Fintec) y NCG 502 y 514 de la CMF",
+      "Ley 20.009 de fraude en medios de pago (texto vigente desde el 30 de mayo de 2024)",
+      "Ley 21.365 de tasas de intercambio",
+      "Ley 19.913 y Circular UAF N° 62 de prevención de lavado de activos",
+      "Ley 21.719 de datos personales (vigencia prevista: 1 de diciembre de 2026)",
+      "Ley 21.663 Marco de Ciberseguridad",
+      "Ley 18.010 (tasa máxima convencional) y Ley 21.680 (Registro de Deuda Consolidada)"
+    ],
+    licenses: [
+      "Operar bajo un emisor u operador ya autorizado (sin licencia propia)",
+      "PSP con sub-adquirencia bajo el umbral regulatorio",
+      "Operador sub-adquirente inscrito en la CMF (capital desde 1.000 UF)",
+      "Operador de tarjetas (capital desde 10.000 UF)",
+      "Emisor no bancario de prepago (capital desde 25.000 UF)",
+      "Prestador de servicios financieros Ley Fintec (registro y autorización CMF)",
+      "Proveedor de servicios de iniciación de pagos (registro CMF)"
+    ],
+    kyc: [
+      "Prepago innominado recargable: sin identificación del titular, saldo máximo $20.000",
+      "Prepago innominado no recargable: saldo máximo $100.000",
+      "Prepago nominativo con apertura remota: saldo máximo $500.000 hasta ratificar el contrato por escrito",
+      "Prepago nominativo con verificación fidedigna de identidad o apertura presencial: sin límite de saldo",
+      "Beneficiario final de personas jurídicas al iniciar la relación o en transacciones aisladas desde USD 3.000",
+      "Revisión periódica de clientes contra las listas del Consejo de Seguridad de la ONU"
+    ],
     regulatorRoles: [
-      ["CMF", "Autoriza y fiscaliza emisores/operadores no bancarios, prestadores Fintec y obligaciones de gobierno, riesgo, capital, informacion a clientes y reportes."],
-      ["Banco Central de Chile", "Define reglas prudenciales y operacionales para medios de pago, liquidacion, camaras, cuentas de provision de fondos y resiliencia del sistema."],
-      ["UAF", "Supervisa obligaciones AML/CFT: registro de sujetos obligados cuando aplique, debida diligencia, reportes ROS/ROE y manuales de prevencion."],
-      ["SERNAC", "Revisa relacion de consumo: informacion clara, publicidad, contratos de adhesion, reclamos, cargos, reversas y trato al usuario."],
-      ["SII", "Impacta boletas/facturacion, retenciones, informacion tributaria, merchant acquiring y conciliacion contable del comercio."]
+      ["CMF", "Autoriza la existencia de emisores y operadores no bancarios, lleva sus registros y los fiscaliza. Administra el Registro de Prestadores de Servicios Financieros y el Sistema de Finanzas Abiertas, y fiscaliza el cumplimiento de los límites a las tasas de intercambio.", ["ley20950", "ley21521", "ley21365"]],
+      ["Banco Central de Chile", "Dicta la norma de fondo para emitir y operar tarjetas: capital mínimo, reserva de liquidez, resguardo e inversión de los fondos de clientes, límites de saldo y reglas de sub-adquirencia.", ["cnfJ13", "cnfJ2"]],
+      ["UAF", "Supervisa la prevención de lavado de activos y financiamiento del terrorismo: registro como sujeto obligado, oficial de cumplimiento, reportes de operaciones sospechosas y de operaciones en efectivo.", ["uafLey", "uafCirc62"]],
+      ["Comité de Tasas de Intercambio", "Fija los topes a la tasa de intercambio que cobran los emisores. Lo integran representantes de Hacienda, Banco Central, CMF y Fiscalía Nacional Económica, y debe revisar los límites cada tres años.", ["ley21365", "ctdi"]],
+      ["SERNAC", "Vela por la relación de consumo. La Ley 20.009 fija los plazos y deberes del emisor frente a reclamos por fraude.", ["ley20009"]],
+      ["ANCI", "Recibe los reportes de incidentes de ciberseguridad de quienes prestan servicios esenciales, con un plazo máximo de tres horas desde que se conoce el incidente.", ["anci"]],
+      ["Agencia de Protección de Datos Personales", "Autoridad creada por la Ley 21.719 para fiscalizar el tratamiento de datos personales cuando la ley entre en vigencia.", ["ley21719"]]
     ],
     licensePaths: [
-      ["Sponsor bancario / PSP", "8-14 semanas", "MVP rapido, menor CAPEX regulatorio, dependencia contractual y menor control de margen."],
-      ["Subadquirente / facilitador", "10-18 semanas", "Ideal para link de pago, POS y QR; foco en contratos de adquirencia, riesgo merchant y liquidacion."],
-      ["Emisor no bancario prepago", "6-12 meses", "Requiere autorizacion, segregacion de fondos, capital, gobierno, continuidad y reporting."],
-      ["Operador de tarjetas", "6-12 meses", "Relevante si operas autorizacion, compensacion o liquidacion para terceros; alta exigencia operacional."],
-      ["Prestador Ley Fintec / SFA", "4-9 meses", "Aplica si hay iniciacion de pagos, informacion financiera u otros servicios regulados por Ley 21.521/NCG 502."]
+      ["Operar bajo un emisor u operador autorizado", "Sin licencia propia. El emisor u operador que contrata el servicio responde ante comercios, titulares y la CMF por la prestación y la seguridad operacional.", "MVP y validación de mercado; menor control del margen.", "8-14 semanas", ["cnfJ2"]],
+      ["PSP con sub-adquirencia bajo el umbral", "Sin licencia mientras liquide menos del 50% del Umbral de Operación Sub-Adquirente. El umbral equivale al 1% de los pagos a comercios de todos los operadores en los últimos 12 meses. Exige contrato con un emisor u operador.", "Link de pago, POS y QR en etapa temprana.", "10-18 semanas", ["cnfJ2"]],
+      ["Operador sub-adquirente", "Obligatorio al alcanzar el 50% del umbral durante dos trimestres consecutivos. Inscripción en el Registro de Operadores de la CMF y capital pagado y reservas desde 1.000 UF. Con adquirencia transfronteriza el mínimo sube a 2.000 UF y no hay exención por volumen.", "PSP que ya escaló o que afilia comercios en el exterior.", "Lo fija la CMF; tope de 18 meses en el régimen transitorio", ["cnfJ2", "ncg541"]],
+      ["Operador de tarjetas", "Sociedad anónima especial de giro exclusivo. Capital = máximo entre 10.000 UF y el 20% del monto promedio diario de pagos a comercios de los últimos 24 meses. Reserva de liquidez de al menos el 10% del capital mínimo.", "Adquirencia propia con responsabilidad de pago frente a los comercios.", "6-12 meses", ["cnfJ2"]],
+      ["Emisor no bancario de prepago", "Sociedad anónima especial de giro exclusivo autorizada por la CMF. Capital = máximo entre 25.000 UF y la suma de 1% de los pagos anuales a comercios no relacionados, 8% de los fondos invertidos a largo plazo y 3% de los invertidos a corto plazo. Al menos el 50% de los fondos de clientes en cuentas corrientes bancarias o depósitos a plazo de hasta 90 días.", "Tarjeta prepago o wallet con saldo propio y control del margen.", "6-12 meses", ["ley20950", "cnfJ13", "cmfEmisor"]],
+      ["Prestador de servicios financieros (Ley Fintec)", "Inscripción en el registro de la CMF, que resuelve en 30 días hábiles, más autorización por cada servicio, que resuelve en hasta seis meses. Cubre financiamiento colectivo, sistemas alternativos de transacción, asesoría crediticia y de inversión, custodia, enrutamiento de órdenes e intermediación de instrumentos financieros, incluidos criptoactivos.", "Crypto, scoring crediticio e inversión. No cubre la emisión ni la adquirencia de tarjetas.", "4-9 meses", ["ley21521", "ncg502"]],
+      ["Iniciador de pagos", "Registro en la CMF. No puede mantener fondos de clientes, salvo de forma transitoria con un plazo máximo de pago de 72 horas. Opera sobre el Sistema de Finanzas Abiertas, cuya entrada en vigencia se postergó a julio de 2027.", "Pagos cuenta a cuenta sin tarjeta.", "Depende del calendario del sistema", ["ley21521", "cmfSfa"]]
     ],
     kycLevels: [
-      ["Nivel 0 prospecto", "Email/telefono, consentimiento y device", "Sin saldo o solo simulacion", "Fraude de identidad, abuso promocional"],
-      ["Nivel 1 bajo riesgo", "Documento, nombre, fecha nacimiento, listas sanciones/PEP", "Limites bajos de saldo y transaccion", "Monitoreo basico y velocity checks"],
-      ["Nivel 2 full retail", "Biometria/liveness, domicilio, actividad, scoring transaccional", "Limites comerciales normales", "Alertas AML, origen de fondos si escala"],
-      ["Nivel empresa", "RUT, poderes, beneficiario final, giro, cuenta bancaria", "Limites por comercio y settlement", "Riesgo merchant, contracargos, facturacion"]
+      ["Innominada recargable", "No requiere identificar al titular", "$20.000", ["cnfJ13"]],
+      ["Innominada no recargable", "No requiere identificar al titular", "$100.000", ["cnfJ13"]],
+      ["Nominativa con apertura remota", "Contrato celebrado por medios tecnológicos", "$500.000, hasta que el titular ratifique el contrato por escrito", ["cnfJ13"]],
+      ["Nominativa remota con identidad verificada", "El emisor verifica la identidad de forma fidedigna con autenticación segura", "Sin límite", ["cnfJ13"]],
+      ["Nominativa con apertura presencial", "Contrato suscrito y documentado por escrito", "Sin límite", ["cnfJ13"]]
     ],
+    obligations: [
+      ["Resguardo de fondos", "Los fondos de clientes se registran de forma segregada, son inembargables por otras obligaciones del emisor y no devengan intereses ni reajustes. El titular puede pedir su devolución en cualquier momento.", ["ley20950"]],
+      ["Tasas de intercambio", "Topes vigentes: 0,50% en débito, 1,14% en crédito y 0,94% en prepago. La rebaja a 0,35% y 0,80% prevista para octubre de 2024 quedó suspendida y la revisión sigue abierta.", ["ctdi"]],
+      ["Aviso y bloqueo por fraude", "Canal de aviso gratuito y disponible las 24 horas, con número de seguimiento y bloqueo inmediato del medio de pago.", ["ley20009"]],
+      ["Restitución por fraude", "El usuario reclama dentro de 30 días hábiles desde el aviso y puede incluir operaciones de los 60 días corridos anteriores. El emisor restituye en 10 días hábiles (15 en avances y giros en cajero) hasta un umbral que fija un reglamento entre 15 y 35 UF, y tiene 7 días más para el excedente.", ["ley20009"]],
+      ["Carga de la prueba", "El emisor debe probar que el usuario autorizó la operación; el solo registro no basta. Para suspender una restitución necesita autorización del juez de policía local, pedida dentro de 3 días hábiles y con antecedentes de dolo o culpa grave.", ["ley20009"]],
+      ["Monitoreo de fraude", "Sistemas de monitoreo, gestión de alertas, detección de patrones y límites por canal. La CMF fija los estándares de autenticación.", ["ley20009"]],
+      ["Prevención de lavado", "Registro en la UAF, oficial de cumplimiento, reporte de operaciones sospechosas y reporte de operaciones en efectivo sobre USD 10.000. La Circular N° 62 rige desde el 1 de junio de 2025.", ["uafCirc62", "uafRoe"]],
+      ["Transferencias electrónicas", "Las transferencias desde USD 1.000 deben llevar los datos del ordenante y del beneficiario. Rige desde el 1 de julio de 2025 para las entidades de la Ley Fintec.", ["uafCirc62"]],
+      ["Incidentes de ciberseguridad", "Quien presta un servicio esencial reporta a la ANCI dentro de tres horas desde que conoce el incidente. La obligación rige desde el 1 de marzo de 2025.", ["anci"]],
+      ["Datos personales", "Respuesta a solicitudes de titulares en 30 días corridos, aviso de vulneraciones a la Agencia sin dilaciones indebidas y derecho del titular a pedir intervención humana en decisiones automatizadas, como scoring o bloqueos.", ["ley21719"]]
+    ],
+    keyDates: [
+      ["2 de julio de 2024", "El Banco Central reformó las normas de emisión y operación de tarjetas: creó el operador sub-adquirente y reguló la adquirencia transfronteriza.", ["cnfJ2", "careyBcch"]],
+      ["30 de septiembre de 2024", "El Comité suspendió la segunda rebaja de tasas de intercambio y abrió el primer proceso de revisión de límites.", ["ctdi"]],
+      ["3 de febrero de 2025", "Venció el plazo para que las fintech en operación pidieran su inscripción bajo la NCG 502.", ["ncg502"]],
+      ["23 de julio de 2025", "La CMF dictó la NCG 541, que ajusta su Circular N° 1 de operadoras de tarjetas a la reforma del Banco Central.", ["ncg541"]],
+      ["1 de abril de 2026", "Fecha en que comenzó a regir la Ley 21.680 del Registro de Deuda Consolidada, según su artículo transitorio.", ["redec"]],
+      ["1 de junio de 2026", "La CMF modificó la NCG 514 y postergó el Sistema de Finanzas Abiertas a julio de 2027.", ["cmfSfa"]],
+      ["26 de junio de 2026", "La CMF canceló inscripciones del Registro de Prestadores de Servicios Financieros por incumplir la Ley Fintec y la NCG 502.", ["cmfCancel"]],
+      ["22 de julio de 2026", "Hacienda aprobó la contratación de un nuevo estudio de impacto para la revisión de tasas de intercambio, con 90 días de plazo.", ["ctdi"]],
+      ["1 de diciembre de 2026", "Entrada en vigencia de la Ley 21.719 de datos personales. Hay un proyecto de ley en trámite para postergarla a diciembre de 2027.", ["ley21719", "postergacionDatos"]],
+      ["Julio de 2027", "Entrada en vigencia del Sistema de Finanzas Abiertas, con implementación gradual desde esa fecha.", ["cmfSfa"]]
+    ],
+    productRules: {
+      prepaid: [
+        ["Se rige por la Ley 20.950 y el capítulo III.J.1.3. La decisión central es operar bajo un emisor autorizado o constituir un emisor propio con capital desde 25.000 UF.", ["ley20950", "cnfJ13"]],
+        ["El tipo de tarjeta define el onboarding: una apertura remota sin verificación fidedigna de identidad queda limitada a $500.000 de saldo.", ["cnfJ13"]],
+        ["El ingreso por intercambio tiene tope de 0,94% por transacción mientras siga la medida provisional.", ["ctdi"]],
+        ["Un segmento de adolescentes exige revisar la contratación con menores y el rol del adulto responsable; no encontré una norma específica en las fuentes revisadas.", []]
+      ],
+      wallet: [
+        ["Un saldo custodiado por una entidad no bancaria es una cuenta de provisión de fondos, bajo el mismo régimen que el prepago.", ["ley20950", "cnfJ13"]],
+        ["Las transferencias entre cuentas del mismo emisor están permitidas sin pasar por la red de comercios afiliados.", ["cnfJ13"]],
+        ["El saldo no puede pagar intereses y el usuario puede retirarlo en cualquier momento.", ["ley20950"]]
+      ],
+      paylink: [
+        ["Liquidar pagos a comercios por cuenta de un operador es sub-adquirencia. Bajo el 50% del umbral no exige licencia; sobre ese nivel hay que inscribirse como operador sub-adquirente.", ["cnfJ2"]],
+        ["Cobrar para comercios en el exterior es adquirencia transfronteriza: requiere inscripción, 2.000 UF de capital y no tiene exención por volumen.", ["cnfJ2", "ncg541"]],
+        ["Los topes de intercambio fijan el piso del costo de aceptación que se traspasa al comercio.", ["ctdi"]]
+      ],
+      pos: [
+        ["Aplica el mismo régimen de sub-adquirencia que el link de pago, con el umbral medido sobre los pagos liquidados a comercios.", ["cnfJ2"]],
+        ["La adquirencia transfronteriza se limita a pagos electrónicos en sitios web o aplicaciones, por lo que no cubre ventas presenciales.", ["careyBcch"]],
+        ["El emisor u operador que contrata al PSP responde por la seguridad operacional del servicio.", ["cnfJ2"]]
+      ],
+      account: [
+        ["Una entidad no bancaria puede ofrecer cuentas de provisión de fondos. Las cuentas corrientes y a la vista corresponden a bancos y cooperativas; conviene confirmar este punto con el equipo legal.", ["ley20950", "cnfJ13"]],
+        ["Los pagos cuenta a cuenta mediante iniciación de pagos dependen del Sistema de Finanzas Abiertas, postergado a julio de 2027.", ["cmfSfa"]],
+        ["Los emisores de tarjetas son instituciones proveedoras de información obligadas en el Sistema de Finanzas Abiertas.", ["ley21521"]]
+      ],
+      bnpl: [
+        ["No encontré una norma específica para BNPL. El crédito queda sujeto a la tasa máxima convencional de la Ley 18.010, que publica la CMF.", ["tmc"]],
+        ["La Ley 21.680 crea el Registro de Deuda Consolidada. Qué acreedores deben reportar depende de umbrales fijados por la CMF en la NCG 540.", ["redec"]],
+        ["La asesoría crediticia, que incluye evaluar la capacidad de pago, es un servicio regulado por la Ley Fintec.", ["ley21521"]],
+        ["El titular puede oponerse a decisiones automatizadas de scoring y pedir revisión humana cuando rija la Ley 21.719.", ["ley21719"]]
+      ],
+      remittance: [
+        ["Chile no tiene un régimen propio para empresas de transferencia de dinero, según un informe de la Biblioteca del Congreso. El informe es antiguo y hay que confirmar que no haya cambiado.", ["bcnRemesas"]],
+        ["Las obligaciones concretas son las de prevención de lavado ante la UAF, incluida la regla de datos del ordenante y beneficiario desde USD 1.000.", ["uafCirc62"]],
+        ["Hay un proyecto de ley de inteligencia económica que exigiría acreditar identidad y visa del remitente y guardar registros por 10 años; no está vigente.", ["uafProyecto"]]
+      ],
+      crypto: [
+        ["La Ley Fintec trata los criptoactivos como instrumentos financieros. Operar una plataforma de transacción, intermediar o custodiar exige registro y autorización de la CMF.", ["ley21521", "ncg502"]],
+        ["Las entidades inscritas en el registro son sujetos obligados ante la UAF.", ["careyUaf"]],
+        ["La CMF ya canceló inscripciones por no pedir autorización dentro de plazo, lo que deja a esas entidades sin la habilitación transitoria.", ["cmfCancel"]]
+      ]
+    },
     complianceRoadmap: [
-      ["0. Diagnostico regulatorio", "Legal + Producto", "2-3 semanas", "Mapa de licencias, restricciones, sponsor posible y disclaimer comercial."],
-      ["1. Modelo operacional", "Producto + Ops + Risk", "3-5 semanas", "Flujos de fondos, segregacion, liquidacion, reversas, disputas y conciliacion."],
-      ["2. Programa AML/KYC", "Compliance + Risk", "4-8 semanas", "Manual, matriz de riesgo, listas, monitoreo, reportes, capacitacion y auditoria."],
-      ["3. Contratos y gobierno", "Legal + Finance", "6-12 semanas", "Contratos sponsor/vendor, SLA, outsourcing critico, continuidad, comites y reportes."],
-      ["4. Seguridad/certificacion", "Tech + Security", "8-16 semanas", "PCI-DSS, tokenizacion, gestion de llaves, pruebas DR, pentest y hardening."],
-      ["5. Piloto controlado", "Producto + Ops", "4-6 semanas", "Limites, cohortes, tablero de riesgo, soporte, conciliacion diaria y postmortems."]
+      ["0. Diagnóstico regulatorio", "Legal + Producto", "2-3 semanas", "Ruta regulatoria elegida, emisor u operador posible y restricciones del producto."],
+      ["1. Modelo operacional", "Producto + Ops + Riesgo", "3-5 semanas", "Flujos de fondos, segregación, liquidación, reversas, disputas y conciliación."],
+      ["2. Programa de prevención de lavado", "Compliance + Riesgo", "4-8 semanas", "Registro en la UAF, oficial de cumplimiento, manual, matriz de riesgo, listas y reportes."],
+      ["3. Contratos y gobierno", "Legal + Finanzas", "6-12 semanas", "Contratos con emisor, operador y proveedores, SLA, continuidad y comités."],
+      ["4. Seguridad y fraude", "Tecnología + Seguridad", "8-16 semanas", "Autenticación, monitoreo de fraude, plan de reporte a la ANCI, PCI-DSS y pruebas."],
+      ["5. Piloto controlado", "Producto + Ops", "4-6 semanas", "Límites, cohortes, tablero de riesgo, soporte y conciliación diaria."]
     ],
-    regulatorySources: [
-      ["Ley 20.950", "Emision y operacion de medios de pago con provision de fondos por entidades no bancarias."],
-      ["Ley 21.521 / Ley Fintec", "Marco para servicios financieros tecnologicos y Sistema de Finanzas Abiertas."],
-      ["NCG 502 CMF", "Registro, autorizacion, gobierno, gestion de riesgos, capital/garantias y divulgacion para prestadores Fintec."],
-      ["Normativa UAF", "Debida diligencia, monitoreo y reportes AML/CFT para sujetos obligados segun actividad."],
-      ["Reglas de consumo y datos", "Informacion al cliente, consentimiento, reclamos, proteccion de datos y seguridad de la informacion."]
-    ],
+    sources: {
+      ley20950: ["Ley 20.950", "https://www.bcn.cl/leychile/navegar?idLey=20950"],
+      ley21521: ["Ley 21.521", "https://www.bcn.cl/leychile/navegar?idLey=21521"],
+      ley20009: ["Ley 20.009", "https://www.bcn.cl/leychile/navegar?idNorma=236736"],
+      ley21365: ["Ley 21.365", "https://www.bcn.cl/leychile/navegar?idLey=21365"],
+      ley21719: ["Ley 21.719", "https://www.bcn.cl/leychile/navegar?idLey=21719"],
+      cnfJ13: ["BCCh, capítulo III.J.1.3", "https://www.bcentral.cl/documents/33528/115568/CapIIIJ13.pdf"],
+      cnfJ2: ["BCCh, capítulo III.J.2", "https://www.bcentral.cl/documents/33528/115568/CapIIIJ2.pdf"],
+      cmfEmisor: ["CMF, trámite de emisores", "https://www.cmfchile.cl/portal/principal/623/w4-article-29349.html"],
+      cmfSfa: ["CMF, comunicado 1-jun-2026", "https://www.cmfchile.cl/portal/prensa/625/w4-article-110881.html"],
+      cmfCancel: ["CMF, comunicado 26-jun-2026", "https://www.cmfchile.cl/portal/prensa/625/w4-article-111431.html"],
+      ncg541: ["CMF, NCG 541", "https://www.cmfchile.cl/normativa/ncg_541_2025.pdf"],
+      ncg502: ["Carey, sobre NCG 502", "https://www.carey.cl/cmf-dicta-normativa-que-regula-a-los-prestadores-de-servicios-financieros"],
+      ctdi: ["Comité de Tasas de Intercambio", "https://ctdi.hacienda.cl/resoluciones-y-comunicados"],
+      uafLey: ["UAF, Ley 19.913", "https://www.uaf.cl/es-cl/normativa/nuestra-ley"],
+      uafCirc62: ["Carey, sobre Circular UAF 62", "https://www.carey.cl/uaf-dicta-nuevo-marco-normativo-para-prevencion-de-lavado-de-activos-y-financiamiento-del-terrorismo"],
+      uafRoe: ["UAF, instructivo ROE", "https://www.uaf.cl/media/documentos/2025_Env%C3%ADo_del_ROE.pdf"],
+      uafProyecto: ["UAF, noticia del proyecto", "https://www.uaf.cl/es-cl/noticia-detalle?id=47127"],
+      careyUaf: ["Carey, Ley Fintec y UAF", "https://www.carey.cl/ley-fintech-y-nuevos-sujetos-obligados-ante-la-unidad-de-analisis-financiero"],
+      careyBcch: ["Carey, reforma del BCCh", "https://www.carey.cl/banco-central-de-chile-actualiza-regulacion-de-tarjetas-de-pago/"],
+      anci: ["ANCI", "https://anci.gob.cl/noticias/obligacion-de-reportar/"],
+      redec: ["Ontier, sobre Ley 21.680", "https://www.ontier.law/insight/ley-no-21-680-registro-de-deuda-consolidada"],
+      tmc: ["CMF, tasa máxima convencional", "https://www.cmfchile.cl/portal/prensa/625/w4-article-49644.html"],
+      postergacionDatos: ["Anguita Osorio, postergación", "https://www.anguitaosorio.cl/es/ley-datos-diciembre-2026/"],
+      bcnRemesas: ["BCN, informe de remesas", "https://obtienearchivo.bcn.cl/obtienearchivo?id=repositorio%2F10221%2F24493%2F2%2FBCN_remesas_dinero_no_bancarias_01_%281%29.pdf"]
+    },
     vendors: ["Pomelo", "Kushki", "Global66", "Transbank", "Getnet", "Fintoc", "Mambu"],
     competitors: [
       ["Mach", "Prepago, P2P, tarjeta virtual", "Bajo costo", "Rapido con sponsor", "Marca masiva y UX simple"],
